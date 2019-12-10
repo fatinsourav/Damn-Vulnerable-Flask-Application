@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,
 
 app = Flask (__name__)
 
@@ -15,6 +15,9 @@ def signup():
 @app.route('/openRedirect')
 def openRedirect():
 	return render_template('openRedirect.html')
+@app.route('/test')
+def test():
+	return render_template('test.html')
 
 
 
