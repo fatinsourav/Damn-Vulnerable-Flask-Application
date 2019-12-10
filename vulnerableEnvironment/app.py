@@ -21,7 +21,7 @@ def templateInjection():
 	if request.args.get('name'):
 		person['name'] = request.args.get('name')
 	template = '''<h2>Hello %s!</h2>''' % person['name']
-	return render_template_string(template,person=person)
+	return render_template_string(templateInjection.html,person=person)
 def get_user_file(f_name):
 	with open(f_name) as f:
 		return f.readlines()
