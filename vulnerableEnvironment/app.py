@@ -17,11 +17,11 @@ def openRedirect():
 	return render_template('openRedirect.html')
 @app.route('/templateInjection')
 def templateInjection():
-	person = {'name':"world", 'secret':"East or west Hulk is the best!"}
-	if request.args.get('name'):
-		person['name'] = request.args.get('name')
-	template = '''<h2>Hello %s!</h2>''' % person['name']
-	return render_template_string(templateInjection.html,person=person)
+	madDeveloper = {'userName':"Developer", 'secret':"Hulk is my hero!"}
+	if request.args.get('userName'):
+		madDeveloper['userName'] = request.args.get('userName')
+	
+	return render_template('templateInjection.html',madDeveloper=madDeveloper)
 def get_user_file(f_name):
 	with open(f_name) as f:
 		return f.readlines()
