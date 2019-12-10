@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,
+from flask import Flask, request, render_template_string, render_template
 
 app = Flask (__name__)
 
@@ -15,12 +15,18 @@ def signup():
 @app.route('/openRedirect')
 def openRedirect():
 	return render_template('openRedirect.html')
-@app.route('/test')
-def test():
-	return render_template('test.html')
+@app.route('/templateInjection')
+def templateInjection():
+	person = {'name':"world", 'secret':"East or west Hulk is the best!"}
+	if request.args.get('name'):
+		person['name'] = request.args.get('name')
+	template = '''<h2>Hello %s!</h2>''' % person['name']
+	return render_template(template,person=person)
+def get_user_file(f_name):
+	with open(f_name) as f:
+		return f.readlines()
 
-
-
+app.jinja_env.globals['get_user_file'] = get_user_file 
 if __name__ == "__main__":
 	app.debug = True
 	app.run(host="0.0.0.0", port=8000)
