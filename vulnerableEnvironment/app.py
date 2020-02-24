@@ -5,6 +5,8 @@ from binascii import hexlify, unhexlify
 from os import popen
 from lxml import etree
 import cgi
+import platform
+import time
 
 from flask import Flask, request, render_template_string, render_template
 
