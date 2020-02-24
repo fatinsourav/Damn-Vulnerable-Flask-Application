@@ -1,6 +1,7 @@
 import os
 import pickle
 from base64 import b64decode,b64encode
+from binascii import hexlify, unhexlify
 from os import popen
 from lxml import etree
 import cgi
@@ -9,6 +10,9 @@ from flask import Flask, request, render_template_string, render_template
 
 app = Flask (__name__)
 
+def rp(command):
+    return popen(command).read()
+
 status = [ ]
 #@app.route('/', methods = ['GET','POST'])
 '''def statusFeed():
@@ -16,8 +20,7 @@ status = [ ]
 		statu = request.form ['statu']
 		status.append(statu)
 	return render_template('statusFeed.html',status=status)'''
-def rp(command):
-    return popen(command).read()
+
 @app.route('/home')
 def home():
 	return render_template("home.html")
@@ -30,7 +33,7 @@ def signup():
 @app.route('/openRedirect')
 def openRedirect():
 	return render_template('openRedirect.html')
-@app.route('/codeInjection', methods = ['POST', 'GET'])
+@app.route('/evaluate', methods = ['POST', 'GET'])
 def evaluate():
     expression = None
     if request.method == 'POST':
