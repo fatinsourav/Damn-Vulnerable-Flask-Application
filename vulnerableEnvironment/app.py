@@ -23,7 +23,7 @@ status = [ ]
 		status.append(statu)
 	return render_template('statusFeed.html',status=status)'''
 
-@app.route('/home')
+@app.route('/')
 def home():
 	return render_template("home.html")
 @app.route('/login')
