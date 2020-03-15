@@ -36,6 +36,7 @@ def signup():
 def openRedirect():
 	return render_template('openRedirect.html')
 @app.route('/evaluate', methods = ['POST', 'GET'])
+#Code Injection
 def evaluate():
     expression = None
     if request.method == 'POST':
@@ -51,6 +52,7 @@ def evaluate():
        </body>
     </html>
     """
+#os command Injection  
 @app.route('/lookup', methods = ['POST', 'GET'])
 def lookup():
     address = None
@@ -67,6 +69,7 @@ def lookup():
        </body>
     </html>
     """
+#XXE    
 @app.route('/xml', methods = ['POST', 'GET'])
 def xml():
     parsed_xml = None
@@ -89,18 +92,28 @@ def xml():
        </body>
     </html>
     """
-@app.route('/templateInjection')
-def templateInjection():
-	madDeveloper = {'userName':"Developer", 'secret':"Hulk is my hero!"}
-	if request.args.get('userName'):
-		madDeveloper['userName'] = request.args.get('userName')
-	template = '''<h2>Hello %s!</h2>''' % madDeveloper['userName']
-	return render_template_string(template,madDeveloper=madDeveloper)
-def get_user_file(f_name):
-	with open(f_name) as f:
-		return f.readlines()
 
-app.jinja_env.globals['get_user_file'] = get_user_file 
+
+# server side template injection
+@app.route('/sayhi', methods = ['POST', 'GET'])
+def sayhi():
+   name = ''
+   if request.method == 'POST':
+      name = '<br>Hello %s!<br><br>' %(request.form['name'])
+
+   template = """
+   <html>
+      <body>
+         <form action = "/sayhi" method = "POST">
+            <p><h3>What is your name?</h3></p>
+            <p><input type = 'text' name = 'name'/></p>
+            <p><input type = 'submit' value = 'Submit'/></p>
+         </form>
+      %s
+      </body>
+   </html>
+   """ %(name)
+   return render_template_string(template)
 if __name__ == "__main__":
 	app.debug = True
 	app.run(host="0.0.0.0", port=8000)
