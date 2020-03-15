@@ -29,12 +29,10 @@ def home():
 @app.route('/login')
 def login():
 	return render_template("login.html")
-@app.route('/signup')
-def signup():
+#@app.route('/signup')
+#def signup():
 	return render_template('signup.html')	
-@app.route('/openRedirect')
-def openRedirect():
-	return render_template('openRedirect.html')
+
 @app.route('/evaluate', methods = ['POST', 'GET'])
 #Code Injection
 def evaluate():
