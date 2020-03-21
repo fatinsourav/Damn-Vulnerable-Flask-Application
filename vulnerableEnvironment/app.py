@@ -7,10 +7,21 @@ from lxml import etree
 import cgi
 import platform
 import time
+#from Crypto.Cipher import AES
+#from Crypto import Random
 
 from flask import Flask, request, render_template_string, render_template
 
 app = Flask (__name__)
+
+APP_NAME = 'Insecure Application'
+
+
+CONFIG = {
+    
+    'app_name' : APP_NAME
+}
+
 
 def rp(command):
     return popen(command).read()
@@ -24,8 +35,22 @@ status = [ ]
 	return render_template('statusFeed.html',status=status)'''
 
 @app.route('/')
-def home():
-	return render_template("home.html")
+def index():
+    return """
+    <html>
+    <head><title>Vulnerable  Application: """ + CONFIG['app_name'] +"""</title></head>
+    <body>
+        <p><h3>Functions</h3></p>
+        <a href="/cookie">Set and get cookie value</a><br>
+        <a href="/lookup">Do DNS lookup on address</a><br>
+        <a href="/evaluate">Evaluate expression</a><br>
+        <a href="/xml">Parse XML</a><br>
+        <a href="/config">View some config items</a><br>
+        <a href="/sayhi">Receive a personalised greeting</a><br>
+    </body>
+    </html>
+    """
+
 @app.route('/login')
 def login():
 	return render_template("login.html")
