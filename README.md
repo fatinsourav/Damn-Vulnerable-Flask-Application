@@ -7,3 +7,11 @@ This application contains these bugs:
 	3.Server Side Template Injection 
 	4.Pickle Code Execution
 	5.Insecure Deserialization
+	6.XSS(Cross Site Scripting)
+	7.XXEI (XML External Entity Injection)
+	8.SQLI (SQL Injection)
+
+
+	To Install :
+
+	python app.py
