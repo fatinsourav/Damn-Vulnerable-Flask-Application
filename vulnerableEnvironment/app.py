@@ -40,17 +40,20 @@ def index():
     <html>
     <head><title>Vulnerable  Application: """ + CONFIG['app_name'] +"""</title></head>
     <body>
-        <p><h3>Functions</h3></p>
+        <p><h3>Bugs</h3></p>
+        
         <a href="/cookie">Set and get cookie value</a><br>
         <a href="/lookup">Do DNS lookup on address</a><br>
         <a href="/evaluate">Evaluate expression</a><br>
         <a href="/xml">Parse XML</a><br>
         <a href="/config">View some config items</a><br>
-        <a href="/sayhi">Receive a personalised greeting</a><br>
+        <a href="/sayhi">Receive a personalised greeting</a><br></li>
     </body>
     </html>
     """
-
+@app.errorhandler(404)
+def page_not_found_error(error):
+    return render_template('error.html', error=error)
 @app.route('/login')
 def login():
 	return render_template("login.html")
