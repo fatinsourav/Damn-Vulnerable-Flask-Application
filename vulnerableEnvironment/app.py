@@ -14,7 +14,7 @@ from flask import Flask, request, render_template_string, render_template
 
 app = Flask (__name__)
 
-APP_NAME = 'Insecure Application'
+APP_NAME = 'Damn Vulnerable Flask Application'
 
 
 CONFIG = {
@@ -38,7 +38,7 @@ status = [ ]
 def index():
     return """
     <html>
-    <head><title>Vulnerable  Application: """ + CONFIG['app_name'] +"""</title></head>
+    <head><title>Damn Vulnerable Flask Application: """ + CONFIG['app_name'] +"""</title></head>
     <body>
         <p><h3>Bugs</h3></p>
         
@@ -54,12 +54,6 @@ def index():
 @app.errorhandler(404)
 def page_not_found_error(error):
     return render_template('error.html', error=error)
-@app.route('/login')
-def login():
-	return render_template("login.html")
-#@app.route('/signup')
-#def signup():
-	return render_template('signup.html')	
 
 @app.route('/evaluate', methods = ['POST', 'GET'])
 #Code Injection
