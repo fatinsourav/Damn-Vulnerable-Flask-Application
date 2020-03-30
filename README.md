@@ -14,7 +14,14 @@ This application contains these bugs:
 	10.XXE (XML External Entity)
 	11.SQLI (SQL Injection)
 
+ Installation and Setup
+ git clone  https://github.com/fatinsourav/Damn-Vulnerable-Flask-Application.git
 
-	To Install :
+ cd Damn-Vulnerable-Flask-Application
+	
+ cd vulnerableEnvironment
 
-	python app.py
+ python app.py
+
+ 
+
