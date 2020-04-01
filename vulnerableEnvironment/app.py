@@ -7,8 +7,8 @@ from lxml import etree
 import cgi
 import platform
 import time
-#from Crypto.Cipher import AES
-#from Crypto import Random
+from Crypto.Cipher import AES
+from Crypto import Random
 
 from flask import Flask, request, render_template_string, render_template
 
