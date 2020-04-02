@@ -10,7 +10,7 @@ import time
 from Crypto.Cipher import AES
 from Crypto import Random
 
-from flask import Flask, request, render_template_string, render_template
+from flask import Flask, request, render_template_string, render_template,redirect,session
 
 app = Flask (__name__)
 
@@ -134,6 +134,9 @@ def sayhi():
    </html>
    """ %(name)
    return render_template_string(template)
+@app.route('/openRedirect',methods=['POST','GET'])
+def openRedirect():
+  return render_template('openRedirect.html')
 if __name__ == "__main__":
 	app.debug = True
 	app.run(host="0.0.0.0", port=8000)
