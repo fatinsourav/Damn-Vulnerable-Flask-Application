@@ -1,4 +1,5 @@
 import os
+import sqlite3
 import pickle
 from base64 import b64decode,b64encode
 from binascii import hexlify, unhexlify
@@ -34,7 +35,7 @@ status = [ ]
 		status.append(statu)
 	return render_template('statusFeed.html',status=status)'''
 
-@app.route('/')
+@app.route('/dashboard')
 def index():
     return """
     <html>
@@ -134,9 +135,9 @@ def sayhi():
    </html>
    """ %(name)
    return render_template_string(template)
-@app.route('/openRedirect',methods=['POST','GET'])
-def openRedirect():
-  return render_template('openRedirect.html')
+#@app.route('/openRedirect',methods=['POST','GET'])
+#def openRedirect():
+ # return render_template('openRedirect.html')
 if __name__ == "__main__":
 	app.debug = True
 	app.run(host="0.0.0.0", port=8000)
