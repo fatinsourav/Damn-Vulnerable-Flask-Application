@@ -29,5 +29,16 @@ The <a href=https://www.owasp.org>OWASP</a> site is a treasure trove of informat
 
 <h1>What is Full Path Disclosure?</h1>
 <p>Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.: /home/omg/htdocs/file/. Certain vulnerabilities, such as using the load_file() (within a SQL Injection) query to view the page source, require the attacker to have the full path to the file they wish to view.</p>
+<h1>What is Server Side Template Injection?</h1>
+<p>Template engines are widely used by web applications to present dynamic data via web pages and emails. Unsafely embedding user input in templates enables Server-Side Template Injection, a frequently critical vulnerability that is extremely easy to mistake for Cross-Site Scripting (XSS), or miss entirely. Unlike XSS, Template Injection can be used to directly attack web servers' internals and often obtain Remote Code Execution (RCE), turning every vulnerable application into a potential pivot point.</p>
+<h1>What is Pickle Code Execution?</h1>
+<p>Pickle is a serialization/deserialization module found within the standard Python library. For those unfamiliar with serialization and deserialization; it is a way of converting objects and data structures to files or databases so that they can be reconstructed later (possibly in a different environment). This process is called serialization and deserialization, but in Python, it is called pickling and unpickling. One big caveat to pickle however, is that it does not perform any “security checking” on the data that is being unpickled, meaning that an attacker having access to the endpoint can potentially gain remote code execution by serving malicious input. </p>
+<h1>What is Cross Site Scripting(XSS)?</h1>
+<p>Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user.</p>
+<p>XSS Types:</p>
+<ol><li>Reflected XSS</li>
+<li> Stored XSS</li>
+<li>Blind XSS</li>
+</ol>
 </body>
 </html>
