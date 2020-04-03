@@ -24,6 +24,10 @@ The <a href=https://www.owasp.org>OWASP</a> site is a treasure trove of informat
 <p>Cross site scripting. Unsafe treatment of HTTP parameters can allow injection of malicious JavaScript into a web application.</p>
 
 <p>Command execution. Unsafe treatment of HTTP parameters can allow an attacker to run run arbitrary shell commands on the web server.</p>
+<h1>What is Source Code Disclosure?</h1>
+<p>Source code intended to be kept server-side can sometimes end up being disclosed to users. Such code may contain sensitive information such as database passwords and secret keys, which may help malicious users formulate attacks against the application.</p>
 
+<h1>What is Full Path Disclosure?</h1>
+<p>Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.: /home/omg/htdocs/file/. Certain vulnerabilities, such as using the load_file() (within a SQL Injection) query to view the page source, require the attacker to have the full path to the file they wish to view.</p>
 </body>
 </html>
