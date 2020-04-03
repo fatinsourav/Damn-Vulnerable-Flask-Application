@@ -8,11 +8,10 @@ This application contains these bugs:
 	4.Full Path Disclousre
 	5.Directory Traversal
 	6.Server Side Template Injection 
-	7.Pickle Code Execution
-	8.Insecure Deserialization
-	9.XSS(Cross Site Scripting)
-	10.XXE (XML External Entity)
-	11.SQLI (SQL Injection)
+	7.Pickle Code Execution/Insecure Deserialization
+	8.XSS(Cross Site Scripting)
+	9.XXE (XML External Entity)
+	10.SQLI (SQL Injection)
 
  Installation and Setup
  git clone  https://github.com/fatinsourav/Damn-Vulnerable-Flask-Application.git
