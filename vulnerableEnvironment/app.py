@@ -11,7 +11,7 @@ import time
 from Crypto.Cipher import AES
 from Crypto import Random
 
-from flask import Flask, request, render_template_string, render_template,redirect,session
+from flask import Flask,redirect,request, render_template_string, render_template,session
 
 app = Flask (__name__)
 
@@ -23,39 +23,14 @@ CONFIG = {
     'app_name' : APP_NAME
 }
 
-def connectDb():
-  return sqlite3.connect(DATABASE_PATH)
 
-def createTables():
-  conn = connectDb()
-    cur = conn.cursor()
-    cur.execute('''
-            CREATE TABLE IF NOT EXISTS user(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username VARCHAR(32),
-            password VARCHAR(32)
-            )''')
-    cur.execute('''
-        CREATE TABLE IF NOT EXISTS time_line(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id INTEGER,
-        content TEXT,
-        FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
-        )''')
-    conn.commit()
-    conn.close()
+
 def rp(command):
     return popen(command).read()
 
-status = [ ]
-#@app.route('/', methods = ['GET','POST'])
-'''def statusFeed():
-	if request.method == 'POST':
-		statu = request.form ['statu']
-		status.append(statu)
-	return render_template('statusFeed.html',status=status)'''
 
-@app.route('/dashboard')
+
+#@app.route('/dashboard')
 def index():
     return """
     <html>
