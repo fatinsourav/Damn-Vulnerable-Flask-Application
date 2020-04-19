@@ -136,5 +136,4 @@ def sayhi():
 if __name__ == "__main__":
   SQLALCHEMY_TRACK_MODIFICATIONS = False
   app.debug = True
-  db.create_all()
   app.run(host="0.0.0.0", port=8000)
