@@ -1,5 +1,4 @@
 import os
-import sqlite3
 import pickle
 from base64 import b64decode,b64encode
 from binascii import hexlify, unhexlify
@@ -11,12 +10,11 @@ import time
 from Crypto.Cipher import AES
 from Crypto import Random
 
-from flask import Flask,redirect,request, render_template_string, render_template,session
-
+from flask import Flask,redirect,request, render_template_string, render_template,session,flash,url_for,session,logging
+from flask_sqlalchemy import SQLAlchemy
 app = Flask (__name__)
 
 APP_NAME = 'Damn Vulnerable Flask Application'
-DATABASE_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
 
 CONFIG = {
     
@@ -30,7 +28,7 @@ def rp(command):
 
 
 
-#@app.route('/dashboard')
+@app.route('/dashboard')
 def index():
     return """
     <html>
