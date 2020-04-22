@@ -1,6 +1,6 @@
 import sqlite3 as sql
 
-conn = sql.connect("test.db")
+conn = sql.connect("user.db")
 cur = conn.cursor()
 
 # =================
