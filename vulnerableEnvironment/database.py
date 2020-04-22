@@ -1,16 +1,16 @@
-import sqlite3 as sql
 
-conn = sql.connect("user.db")
-cur = conn.cursor()
+import sqlite3
+with sqlite3.connect('test.db') as connection:
 
-# =================
-#  Query execution
-# =================
-query = ('''CREATE TABLE USERS2
+	c = connection.cursor()
+	c.execute('''CREATE TABLE USERS2
     (username TEXT NOT NULL,
      email TEXT Primary key,
      password TEXT NOT NULL,
      contact  INT);''')
-cur.execute(query)
 
-conn.close()
+
+
+
+
+
