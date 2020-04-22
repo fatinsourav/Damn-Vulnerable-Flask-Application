@@ -10,10 +10,11 @@ import time
 from Crypto.Cipher import AES
 from Crypto import Random
 
-from flask import Flask,redirect,request, render_template_string, render_template,session,flash,url_for,session,logging
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask,redirect,request, render_template_string, render_template,session,flash,url_for,session,logging,jsonify
+import sqlite3 as sql
+from flask_cors import CORS,cross_origin
 app = Flask (__name__)
-
+app.secret_key = 'Harry Potter And The Deathly Hallows'
 
 APP_NAME = 'Damn Vulnerable Flask Application'
 
@@ -22,8 +23,59 @@ CONFIG = {
     'app_name' : APP_NAME
 
 }
+@app.after_request 
+def after_request(response):
+    header = response.headers
+    header['Access-Control-Allow-Origin'] = '*'
+    return response
 
 
+def insertUser(username, email, password, contact):
+    con = sql.connect("user.db")
+    cur = con.cursor()
+    phone = int(contact)
+    query = ("""INSERT INTO USERS
+             (username,email,password,contact)
+             VALUES ('%s','%s','%s',%d)""" %
+             (username, email, password, phone))
+    cur.execute(query)
+    con.commit()
+    con.close()
+
+def validUser(email, password):
+    con = sql.connect("user.db")
+    cur = con.cursor()
+    query = ("""SELECT * FROM USERS
+             where email = '%s' and password = '%s'
+             """ %
+             (email, password))
+    cur.execute(query)
+    data = cur.fetchall()
+    con.close()
+    return data
+
+@app.route('/signin/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        rd = validUser(request.form['email'], request.form['password'])
+        if rd:
+            return "Sucessful Login"
+        else:
+            return "UnSucessful login"
+    else:
+        return render_template('index2.html')
+
+@app.route('/signup/', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        contact = request.form['contact']
+        insertUser(username, email, password, contact)
+        return redirect(url_for('login'))
+    else:
+        return render_template('index.html')
 
 def rp(command):
     return popen(command).read()
@@ -130,10 +182,7 @@ def sayhi():
    </html>
    """ %(name)
    return render_template_string(template)
-#@app.route('/openRedirect',methods=['POST','GET'])
-#def openRedirect():
- # return render_template('openRedirect.html')
+
 if __name__ == "__main__":
-  SQLALCHEMY_TRACK_MODIFICATIONS = False
   app.debug = True
   app.run(host="0.0.0.0", port=8000)
