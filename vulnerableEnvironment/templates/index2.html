@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
   <title>Signup Form</title>
   
-  
-
     <style type="text/css">
     	form > input{
     		margin: 10px;
@@ -26,13 +24,12 @@
 			</div>
 			<br>
 			<div class="login">
-				<form action="/signup/" method="post">
-					<input type="text" placeholder="username" name="username"><br>
+				<form action="/signin/" method="post">
 					<input type="email" placeholder="email" name="email"><br>
 					<input type="password" placeholder="password" name="password"><br>
-					<input type="tel" placeholder="contact-no" name="contact"><br>
-					<input type="submit" value="Signup">
+					<input type="submit" value="Login">
 				</form>
+				<a href="{{url_for('signup')}}">Signup</a>
 			</div>
 		</div>
 		</center>
