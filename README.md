@@ -13,7 +13,7 @@ This application contains these bugs:
 	9.XXE (XML External Entity)
 	10.SQLI (SQL Injection)
 
- Installation and Setup
+ #Installation and Setup
  git clone  https://github.com/fatinsourav/Damn-Vulnerable-Flask-Application.git
 
  cd Damn-Vulnerable-Flask-Application
