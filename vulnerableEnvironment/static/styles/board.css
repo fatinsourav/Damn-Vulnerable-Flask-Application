@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    /*background-color: #1C1F2B;*/
+    color: #fff;
+
+    background: url(Group.png);
+}
+
+.bar {
+    color: #00dcff;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.option {
+    color: #7390c5;
+    margin: 20px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.option:hover {
+    cursor: pointer;
+}
+
+.stats {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.block {
+    width: 100%;
+    margin: 10px 10px 10px 0px;
+    display: table;
+    font-size: 1.1em;
+    background-color: #03122f;
+
+}
+
+.header{
+    color: #00dcff!important;
+
+}
+
+.infoInBlocks {
+    display: table-cell;
+    vertical-align: top;
+    align:left;
+    padding-bottom: 15px;
+}
+
+#userInfo {
+    vertical-align: top;
+    text-align: center;
+    border-right: 2px solid #1C1F2B;
+}
+
+#userInfo {
+    width: 25%;
+    vertical-align: top;
+    text-align: center;
+    border-right: 2px solid #1C1F2B;
+}
+
+.profilePhoto {
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    background: url("https://avatars0.githubusercontent.com/u/31669858?s=460&v=4");
+    background-size: contain;
+    border-radius: 100%;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.statsElements {
+    /*display: inline-block;*/
+    font-size: 0.9em;
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    /*border-top: 1px solid black;*/
+
+}
+
+.stat{
+    display: inline-block;
+    padding: 10px;
+}
+
+.valueInfo {
+    color: #2196f3;
+    font-size: 1.0em;
+}
+
+.valueInfo::before {
+    content: " ";
+}
+
+.profile{
+    margin-top:60px;
+    margin-left: 80px;
+}
+
+#name{
+    font-size: 1.8em;
+}
+
+.hrstyle {
+    width: 25%;
+    align: left;
+}
+
+.statHeader{
+    padding: 10px!important;
+    margin: 0;
+    width: 200px;
+    color: #f8e71c!important;
+}
+
+.statHeader:before{
+    content: "->";
+}
+
+#userStats {
+    margin-top: 80px;
+}
+
+.blockName {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 80px;
+    margin-top:20px;
+}

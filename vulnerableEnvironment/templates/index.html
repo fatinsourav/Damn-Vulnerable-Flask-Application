@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+   
+   <head>
+   	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/board.css') }}">
+   </head>
+	{% if data %}
+	<h3>{{data}}</h3>
+	{% else %}
+
+	<!-- <a href="/logout">Logout</a> <br> <br> -->
+	<a href="/logout" data-toggle="modal" data-target="#logoutModal">logout</a>
+	
+	<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="https://www.feedspot.com/infiniterss.php?_src=feed_title&followfeedid=189173&q=site:http%3A%2F%2Ffeeds.feedburner.com%2FTheHackersNews">News</a>
+  <a href="dashboard">Dashboard</a>
+  <a href="glossary">About</a>
+</div>
+	<h1>Hello Researcher!</h1>
+    <h1> Welcome to your hack to learn adventure!</h1>
+    <h1> Best of luck with your adventure!</h1>
+	{% endif %}
+
+{% else %}
+<h1>Welcome To Damn Vulnerable Flask Application</h1>
+ 
+
+<!-- <a href="/login">Login</a> 
+<a href="/register">Register</a> -->
+<div class="container">
+	<div class="row" style="margin-top: 40px">
+		<div class="col-sm-6">
+			<ul>
+				<li class="col-sm-6"><a href="/login" class="btn form-control btn-success">Login</a></li>
+				<li class="col-sm-6"><a href="/register" class="btn form-control btn-primary">Register</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endblock %}
