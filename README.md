@@ -1,12 +1,12 @@
-##What is Damn-Vulnerable-Flask-Application?
+## What is Damn-Vulnerable-Flask-Application?
 <p>DVFA( Damn Vulnerable Flask Application) is an intentionally vulnerable application.It's aim to aid for both security researchers and students to test their skills,help developers to better understand web security.</p>
-##Pre-requisite
-#Flask
-You can install `Flask` using pip:
-```pip install flask```
-#Sqlalchemy
-You can install `Sqlalchemy` using pip:
-```pip install -U Flask-SQLAlchemy```
+## Pre-requisite
+ # Flask
+ You can install `Flask` using pip:
+ ```pip install flask```
+ # Sqlalchemy
+ You can install `Sqlalchemy` using pip:
+ ```pip install -U Flask-SQLAlchemy```
 	1.Os Command Injection
 	2.Code Injection
 	3.Source Code Disclousre
