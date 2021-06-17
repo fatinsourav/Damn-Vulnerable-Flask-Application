@@ -33,18 +33,22 @@ You can install `Flask` using pip as following:
  python app.py
  ```
  ### Vulnerabilities
- 1.Injection
-	2.Source Code Disclousre
-	3.Full Path Disclousre
-	4.Directory Traversal
-	5.Server Side Template Injection 
-	6.Pickle Code Execution/Insecure Deserialization
-	7.XSS(Cross Site Scripting)
-	8.SQLI (SQL Injection)
- 
+``` 
+1.Injection
+2.Source Code Disclousre
+3.Full Path Disclousre
+4.Directory Traversal
+5.Server Side Template Injection 
+6.Pickle Code Execution/Insecure Deserialization
+7.XSS(Cross Site Scripting)
+8.SQLI (SQL Injection)
+``` 
  ### Credits:
+ ```
  Syed Athar Bin Amir (Lecturer, ECE, NSU)
+ Beetles Cyber Security Limited
  OWASP(Open Web Application Security Project)
  Pentesterlab
  Portswigger
  Try Hack Me
+ ```
