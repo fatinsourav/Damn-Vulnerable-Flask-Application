@@ -5,7 +5,6 @@
 <p>DVFA( Damn Vulnerable Flask Application) is an intentionally vulnerable web application for security research.Its goal is to aid software engineers, security researchers, and students to analyze application security.</p>
 
 ### Pre-requisite
- Flask
 You can install `requirements` using pip as following:
  ```
  pip install requirements.txt
