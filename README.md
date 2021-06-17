@@ -40,5 +40,8 @@ You can install `Flask` using pip as following:
 	8.SQLI (SQL Injection)
  
  ### Credits:
+ Syed Athar Bin Amir (Lecturer, ECE, NSU)
  OWASP(Open Web Application Security Project)
-
+ Pentesterlab
+ Portswigger
+ Try Hack Me
