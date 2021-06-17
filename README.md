@@ -14,19 +14,31 @@ You can install `Flask` using pip as following:
  ```
 
 ### Installation
- You can install `DVFA` by downloading it to your local 
+ You can install `DVFA` by downloading it to your local machine as following:
  ```
  git clone  https://github.com/fatinsourav/Damn-Vulnerable-Flask-Application.git
  ```
+ Change the directory
  ```
  cd Damn-Vulnerable-Flask-Application
  ```
  ```
  cd vulnerableEnvironment
  ```
+ Start the application using `python` as following:
  ```
  python app.py
  ```
-
+ ### Vulnerabilities
+ 1.Injection
+	2.Source Code Disclousre
+	3.Full Path Disclousre
+	4.Directory Traversal
+	5.Server Side Template Injection 
+	6.Pickle Code Execution/Insecure Deserialization
+	7.XSS(Cross Site Scripting)
+	8.SQLI (SQL Injection)
  
+ ### Credits:
+ OWASP(Open Web Application Security Project)
 
