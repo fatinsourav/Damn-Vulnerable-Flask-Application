@@ -1,0 +1,6 @@
+.git
+.github
+.ankra
+node_modules
+.env
+.env.*
