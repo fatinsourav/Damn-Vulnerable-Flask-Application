@@ -1,6 +1,6 @@
 astroid==2.15.4
 beautifulsoup4==4.12.2
-blinker==1.6.2
+blinker==1.9.0
 bs4==0.0.1
 certifi==2026.11.20
 charset-normalizer==2.1.1
