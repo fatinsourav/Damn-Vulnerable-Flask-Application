@@ -26,14 +26,14 @@ mysqlclient==2.3.1
 Naked==0.1.32
 pefile==2023.2.7
 platformdirs==3.5.1
-protobuf==4.25.8
+protobuf==5.29.6
 pycryptodome==3.19.1
 pylint==2.17.4
 PyYAML==6.0.3
 requests==2.34.2
 setuptools==78.1.1
 shellescape==3.8.1
-soupsieve==2.8.4
+soupsieve==4.0.0
 SQLAlchemy==2.1.9
 tomlkit==0.15.2
 typing_extensions==4.16.0
