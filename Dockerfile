@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 FROM python:3.13-slim
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends tini libmariadb3 libxml2 libxslt1.1 && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir --upgrade pip==26.3 setuptools==78.1.1 wheel==0.46.2
 ENV PYTHONUNBUFFERED=1 PATH=/opt/venv/bin:$PATH
 WORKDIR /app
 RUN useradd --system --uid 10001 --no-create-home app

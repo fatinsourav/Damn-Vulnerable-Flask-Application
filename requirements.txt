@@ -33,7 +33,7 @@ PyYAML==6.0.3
 requests==2.34.2
 setuptools==78.1.1
 shellescape==3.8.1
-soupsieve==2.4.1
+soupsieve==2.8.4
 SQLAlchemy==2.1.9
 tomlkit==0.15.2
 typing_extensions==4.16.0
