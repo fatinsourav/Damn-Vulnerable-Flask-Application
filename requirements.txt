@@ -2,7 +2,7 @@ astroid==2.15.4
 beautifulsoup4==4.12.2
 blinker==1.6.2
 bs4==0.0.1
-certifi==2022.9.24
+certifi==2026.10.23
 charset-normalizer==2.1.1
 click==8.1.3
 colorama==0.4.6
@@ -11,14 +11,14 @@ dill==0.3.6
 Flask==3.0.0
 Flask-MySQLdb==1.0.1
 Flask-SQLAlchemy==3.1.1
-greenlet==3.0.0
+greenlet==3.1.1
 gunicorn==20.1.0
 idna==3.4
 isort==5.12.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 lazy-object-proxy==1.9.0
-lxml==4.9.3
+lxml==5.4.0
 MarkupSafe==2.1.3
 mccabe==0.7.0
 mysql-connector-python==8.0.33
