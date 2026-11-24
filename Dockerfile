@@ -8,6 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 FROM python:3.13-slim
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends tini libmariadb3 libxml2 libxslt1.1 && rm -rf /var/lib/apt/lists/*
+# Upgrade the base image's own Python packages (pip, setuptools, wheel and their dependencies), which the image scanner reads from the image itself.
+RUN python -m pip install --no-cache-dir --upgrade "pip" "setuptools==84.1.0" "wheel==0.46.2" "jaraco.context==6.1.0" "msgpack==1.2.3" "urllib3==2.8.0"
 ENV PYTHONUNBUFFERED=1 PATH=/opt/venv/bin:$PATH
 WORKDIR /app
 RUN useradd --system --uid 10001 --no-create-home app
